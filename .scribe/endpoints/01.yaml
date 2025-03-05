@@ -1,0 +1,281 @@
+name: Projects
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/project
+    metadata:
+      groupName: Projects
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a new project'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: required.
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: required.
+        required: false
+        example: 'Dolores dolorum amet iste laborum eius est dolor.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      title: consequatur
+      description: 'Dolores dolorum amet iste laborum eius est dolor.'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "message": "Project successfully added!",
+               "data": {
+                   "title": "New Project 4",
+                   "description": "This is 4th project",
+                   ""user_id": 1,
+                   "updated_at": "2025-03-05T10:54:34.000000Z",
+                   "created_at": "2025-03-05T10:54:34.000000Z",
+                   "id": 1
+               }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/project/{project_id}'
+    metadata:
+      groupName: Projects
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a project'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      project_id:
+        name: project_id
+        description: 'The ID of the project.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      project_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      id:
+        name: id
+        description: 'The id of the project'
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      id: 17
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "message": "Project retrieved successfully!",
+               "data": {
+                   "id": 1,
+                   "title": "New Project 4",
+                   "description": "This is 4th project",
+                   ""user_id": 1,
+                   "updated_at": "2025-03-05T10:54:34.000000Z",
+                   "created_at": "2025-03-05T10:54:34.000000Z",
+               }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/project/{project_id}'
+    metadata:
+      groupName: Projects
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove or delete a project'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      project_id:
+        name: project_id
+        description: 'The ID of the project.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      project_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      id:
+        name: id
+        description: 'The id of the project'
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      id: 17
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "message": "Project deleted successfully!",
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/project-list
+    metadata:
+      groupName: Projects
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display Project list'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "projects": {
+              "current_page": 1,
+              "data": [
+                {
+                  "id": 1,
+                  "user_id": 1,
+                  "title": "New Project 4",
+                  "description": "This is 4th project",
+                  "created_at": "2025-03-05T16:05:21.000000Z",
+                  "updated_at": "2025-03-05T16:05:21.000000Z",
+                  "tasks": []
+                }
+              ],
+              "first_page_url": "http://127.0.0.1:8000/api/project-list?page=1",
+              "from": 1,
+              "last_page": 1,
+              "last_page_url": "http://127.0.0.1:8000/api/project-list?page=1",
+              "links": [
+                {
+                  "url": null,
+                  "label": "« Previous",
+                  "active": false
+                },
+                {
+                  "url": "http://127.0.0.1:8000/api/project-list?page=1",
+                  "label": "1",
+                  "active": true
+                },
+                {
+                  "url": null,
+                  "label": "Next »",
+                  "active": false
+                }
+              ],
+              "next_page_url": null,
+              "path": "http://127.0.0.1:8000/api/project-list",
+              "per_page": 10,
+              "prev_page_url": null,
+              "to": 1,
+              "total": 1
+            }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
